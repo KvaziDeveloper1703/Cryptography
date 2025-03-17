@@ -79,10 +79,13 @@ class PlayfairCipher:
         for row_index, row in enumerate(self.matrix):
             if character in row:
                 return row_index, row.index(character)
+        raise ValueError(f"Character {character} not found in matrix!")
 
     def format_text(self, text: str):
         text = text.upper().replace('J', 'I')
         formatted_text = []
+
+        text = ''.join([c for c in text if c.isalpha()])
 
         i = 0
         while i < len(text):

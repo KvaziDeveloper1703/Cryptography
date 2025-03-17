@@ -34,7 +34,7 @@ Decryption:
 + Замените зашифрованную букву на ту, что находится на вычисленной позиции.
 """
 
-class Caesar_Cipher:
+class CaesarCipher:
     
     def __init__(self, shift: int):
 
@@ -84,7 +84,7 @@ class Caesar_Cipher:
 
 if __name__ == "__main__":
 
-    cipher = Caesar_Cipher(shift=3)
+    cipher = CaesarCipher(shift=3)
 
     plain_text = "HELLO, WORLD!"
     encoded_text = cipher.encode(plain_text)

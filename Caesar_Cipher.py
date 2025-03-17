@@ -23,6 +23,7 @@ Algorithm:
 """
 
 class Caesar_Cipher:
+    
     def __init__(self, shift: int):
 
         self.shift = shift
@@ -41,40 +42,41 @@ class Caesar_Cipher:
             23: 'W', 24: 'X', 25: 'Y', 26: 'Z'
         }
 
-    def _shift_character(self, char: str, shift_amount: int) -> str:
-        char = char.upper()
-        if char in self.alphabet:
-            current_pos = self.alphabet[char]
-            new_pos = (current_pos + shift_amount - 1) % 26 + 1
-            return self.reverse_alphabet[new_pos]
-        return char
+    def shift_character(self, character: str, shift: int) -> str:
+        character = character.upper()
+        if character in self.alphabet:
+            current_position = self.alphabet[character]
+            new_position = (current_position + shift - 1) % 26 + 1
+            return self.reverse_alphabet[new_position]
+        return character
 
     def encode(self, text: str) -> str:
         encoded_text = []
-        for char in text:
-            if char.isalpha():
-                shifted_char = self._shift_character(char, self.shift)
-                encoded_text.append(shifted_char)
+        for character in text:
+            if character.isalpha():
+                shifted_character = self.shift_character(character, self.shift)
+                encoded_text.append(shifted_character)
             else:
-                encoded_text.append(char)
+                encoded_text.append(character)
         return ''.join(encoded_text)
 
     def decode(self, text: str) -> str:
         decoded_text = []
-        for char in text:
-            if char.isalpha():
-                shifted_char = self._shift_character(char, -self.shift)
-                decoded_text.append(shifted_char)
+        for character in text:
+            if character.isalpha():
+                shifted_character = self.shift_character(character, -self.shift)
+                decoded_text.append(shifted_character)
             else:
-                decoded_text.append(char)
+                decoded_text.append(character)
         return ''.join(decoded_text)
 
 if __name__ == "__main__":
 
     cipher = Caesar_Cipher(shift=3)
 
-    plain_text = "Hello, world!"
+    plain_text = "HELLO, WORLD!"
     encoded_text = cipher.encode(plain_text)
+
     print(f"Plain text: {plain_text}")
     print(f"Encoded text: {encoded_text}")
 

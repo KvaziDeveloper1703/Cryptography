@@ -1,8 +1,6 @@
 """
 The Affine Cipher is a substitution cipher that encrypts text using a linear transformation. Each letter in the alphabet is replaced with another letter based on a mathematical rule. The transformation is consistent for all characters in the text.
 
-Algorithm:
-
 Encryption:
 + Choose two keys: a and b;
 + Ensure that a is coprime with the size of the alphabet;
@@ -22,8 +20,6 @@ Decryption:
 
 Афинный шифр — это подстановочный шифр, который шифрует текст с использованием линейного преобразования. Каждая буква алфавита заменяется другой буквой на основе определенного правила. Преобразование одинаково для всех символов текста.
 
-Алгоритм работы:
-
 Зашифровка:
 + Выбираются два ключа: a и b;
 + Убедитесь, что a взаимно простое с размером алфавита;
@@ -33,7 +29,7 @@ Decryption:
     + Прибавьте второй ключ b к полученному результату;
     + Разделите итог на размер алфавита и возьмите остаток (чтобы результат остался в пределах алфавита);
     + Замените букву на ту, что находится на новой позиции;
-Остальные символы обычно остаются без изменений.
++ Остальные символы обычно остаются без изменений.
 
 Расшифровка:
 + Найдите позицию зашифрованной буквы в алфавите;

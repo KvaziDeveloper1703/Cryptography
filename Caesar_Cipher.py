@@ -1,25 +1,37 @@
 """
-The Caesar Cipher is one of the simplest and most well-known methods of encrypting text. It works by replacing each letter of the alphabet with another letter, located a fixed number of positions ahead or behind. The shift is consistent for all characters in the text.
+The Caesar Cipher is a substitution cipher that encrypts text by shifting each letter in the alphabet by a fixed number of positions. The shift is uniform for all characters in the text.
 
-Algorithm:
-+ Choose a key;
+Encryption:
++ Choose a key (shift value);
 + For each letter in the plaintext:
     + Determine its position in the alphabet;
-    + Shift the position by the value of the key;
-    + If the shift exceeds the alphabet boundaries, wrap around to the beginning;
-+ Replace the letter with the one at the computed position;
-+ Other characters are usually left unchanged.
+    + Add the key to this position;
+    + Wrap around if the shift exceeds the alphabet boundaries;
+    + Replace the letter with the one at the new position;
++ Non-alphabetic characters are usually left unchanged.
 
-Шифр Цезаря — это один из самых простых и известных методов шифрования текста. Он основан на замене каждой буквы алфавита другой буквой, расположенной на определённое фиксированное количество позиций вперед или назад. Это сдвиг одинаков для всех символов текста.
+Decryption:
++ Determine the position of the encrypted letter in the alphabet;
++ Subtract the key from this position;
++ Wrap around if the result is outside the alphabet boundaries;
++ Replace the encrypted letter with the one at the calculated position.
 
-Алгоритм работы:
-+ Выбирается ключ;
+Шифр Цезаря — это подстановочный шифр, который шифрует текст, сдвигая каждую букву алфавита на фиксированное количество позиций. Сдвиг одинаков для всех символов текста.
+
+Зашифровка:
++ Выбирается ключ (значение сдвига);
 + Для каждой буквы открытого текста:
-    + Определяется её позиция в алфавите;
-    + Позиция сдвигается на значение ключа;
-    + Если сдвиг выходит за границы алфавита, переход осуществляется к его началу;
-+ Буква заменяется на новую, находящуюся на вычисленной позиции;
+    + Определите её позицию в алфавите;
+    + Прибавьте к этой позиции ключ;
+    + Если сдвиг выходит за границы алфавита, выполните переход к его началу;
+    + Замените букву на ту, что находится на новой позиции;
 + Остальные символы обычно остаются без изменений.
+
+Расшифровка:
++ Определите позицию зашифрованной буквы в алфавите;
++ Вычтите из неё значение ключа;
++ Если результат выходит за границы алфавита, выполните переход к его концу;
++ Замените зашифрованную букву на ту, что находится на вычисленной позиции.
 """
 
 class Caesar_Cipher:

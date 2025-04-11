@@ -39,7 +39,7 @@ class RailFenceCipher:
         direction = 1
 
         for character in text:
-            fence[rail].append(char)
+            fence[rail].append(character)
             rail += direction
 
             if rail == 0 or rail == self.rails - 1:

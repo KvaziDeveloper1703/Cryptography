@@ -2,26 +2,38 @@
 The Atbash cipher is a substitution cipher that replaces each letter with its opposite counterpart in the alphabet.
 
 Encryption / Decryption:
-+ Use the standard 26-letter Latin alphabet;
-+ Match each letter with the one in the reverse position;
-+ For each letter in the text:
-    + Find its reverse equivalent in the alphabet;
-    + Replace it with that letter;
-+ The result is a reversed-alphabet substitution;
-+ Non-letter characters are skipped or left unchanged;
-+ The cipher is symmetric — the same process is used for both encryption and decryption.
+    - Use the standard 26-letter Latin alphabet;
+    - Match each letter with the one in the reverse position;
+    - For each letter in the text:
+        - Find its reverse equivalent in the alphabet;
+        - Replace it with that letter.
+    - The result is a reversed-alphabet substitution;
+    - Non-letter characters are skipped or left unchanged;
+    - The cipher is symmetric - the same process is used for both encryption and decryption.
 
-Шифр Атбаш — это подстановочный шифр, в котором каждая буква заменяется на противоположную по положению в алфавите.
+Шифр Атбаш - это подстановочный шифр, в котором каждая буква заменяется на противоположную по положению в алфавите.
 
 Зашифровка / Расшифровка:
-+ Используется стандартный латинский алфавит из 26 букв;
-+ Каждой букве ставится в соответствие буква с противоположного конца алфавита;
-+ Для каждой буквы в тексте:
-    + Определяется "зеркальная" буква;
-    + Выполняется замена;
-+ В результате получается замена по принципу отражения алфавита;
-+ Неалфавитные символы пропускаются или остаются без изменений;
-+ Шифр симметричен — один и тот же алгоритм используется как для шифрования, так и для расшифровки.
+    - Используется стандартный латинский алфавит из 26 букв;
+    - Каждой букве ставится в соответствие буква с противоположного конца алфавита;
+    - Для каждой буквы в тексте:
+        - Определяется "зеркальная" буква;
+        - Выполняется замена.
+    - В результате получается замена по принципу отражения алфавита;
+    - Неалфавитные символы пропускаются или остаются без изменений;
+    - Шифр симметричен - один и тот же алгоритм используется как для шифрования, так и для расшифровки.
+
+Atbash-salaus on korvaussalaus, jossa jokainen kirjain korvataan aakkoston vastakkaisella kirjaimella.
+
+Salaus / purku:
+    - Käytetään tavallista 26-kirjaimista latinalaista aakkostoa;
+    - Jokainen kirjain yhdistetään aakkoston käänteisessä järjestyksessä olevaan vastineeseensa;
+    - Jokaiselle tekstin kirjaimelle:
+        - Etsitään sen käänteinen vastine aakkostossa;
+        - Korvataan se tällä kirjaimella.
+    - Tuloksena on käänteisen aakkoston mukainen korvaus;
+    - Muut kuin kirjaimet ohitetaan tai jätetään muuttumattomiksi;
+    - Salaus on symmetrinen – samaa prosessia käytetään sekä salauksessa että purussa.
 '''
 
 class AtbashCipher:

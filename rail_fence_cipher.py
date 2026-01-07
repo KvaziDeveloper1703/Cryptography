@@ -2,28 +2,28 @@
 The Rail Fence cipher is a transposition cipher that rearranges the characters of the plaintext by writing them in a zigzag pattern across multiple "rails".
 
 Encryption:
-+ Choose the number of rails;
-+ Write the plaintext in a zigzag pattern across the rails;
-+ After finishing, read the characters row by row to get the ciphertext;
-+ No substitution occurs — only the positions of the characters are changed.
+    - Choose the number of rails;
+    - Write the plaintext in a zigzag pattern across the rails;
+    - After finishing, read the characters row by row to get the ciphertext;
+    - No substitution occurs - only the positions of the characters are changed.
 
 Decryption:
-+ Reconstruct the zigzag pattern based on the number of rails and the length of the message;
-+ Fill in the characters row by row;
-+ Read the characters in a zigzag order to recover the original plaintext.
+    - Reconstruct the zigzag pattern based on the number of rails and the length of the message;
+    - Fill in the characters row by row;
+    - Read the characters in a zigzag order to recover the original plaintext.
 
-Железнодорожный шифр — это шифр перестановки, в котором символы текста записываются по зигзагообразной линии на нескольких уровнях (рельсах), а затем считываются построчно.
+Железнодорожный шифр - это шифр перестановки, в котором символы текста записываются по зигзагообразной линии на нескольких уровнях, а затем считываются построчно.
 
 Зашифровка:
-+ Выбирается количество «рельсов»;
-+ Текст записывается по диагонали вниз и вверх, чередуя рельсы, образуя зигзаг;
-+ После записи весь текст считывается по строкам — сначала верхний рельс, затем следующий, и так далее;
-+ Символы не заменяются — меняется только их порядок.
+    - Выбирается количество «рельсов»;
+    - Текст записывается по диагонали вниз и вверх, чередуя рельсы, образуя зигзаг;
+    - После записи весь текст считывается по строкам - сначала верхний рельс, затем следующий, и так далее;
+    - Символы не заменяются - меняется только их порядок.
 
 Расшифровка:
-+ Воссоздаётся зигзагообразный шаблон на основе длины сообщения и числа рельсов;
-+ Символы вставляются по строкам в соответствующие позиции;
-+ Текст восстанавливается, считывая символы по зигзагообразному маршруту.
+    - Воссоздаётся зигзагообразный шаблон на основе длины сообщения и числа рельсов;
+    - Символы вставляются по строкам в соответствующие позиции;
+    - Текст восстанавливается, считывая символы по зигзагообразному маршруту.
 '''
 
 class RailFenceCipher:

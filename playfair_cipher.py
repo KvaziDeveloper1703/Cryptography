@@ -1,47 +1,69 @@
 '''
-The Playfair Cipher is a digraph substitution cipher that encrypts text using a 5x5 matrix created from a keyword. Each pair of letters in the plaintext is encrypted based on the position of the letters in the matrix. If the pair consists of two identical letters, a filler letter (usually 'X') is inserted between them.
+The Playfair Cipher is a digraph substitution cipher that encrypts text using a 5x5 matrix created from a keyword. Each pair of letters in the plaintext is encrypted based on the position of the letters in the matrix. If the pair consists of two identical letters, a filler letter is inserted between them.
 
 Encryption:
-+ Choose a keyword;
-+ Remove duplicate letters from the keyword and append the remaining letters of the alphabet (excluding 'J') to complete the 5x5 matrix;
-+ For each pair of letters in the plaintext:
-    + If the letters are the same, insert a filler letter (usually 'X') between them;
-    + Locate the letters in the matrix:
-        + If the letters appear in the same row, shift each letter to the right (wrap around if necessary);
-        + If the letters appear in the same column, shift each letter down (wrap around if necessary);
-        + If the letters form a rectangle, replace each letter with the one on the same row but in the opposite corner of the rectangle;
-    + Replace each letter with the one at the new position;
-+ Non-alphabetic characters are usually left unchanged.
+    - Choose a keyword;
+    - Remove duplicate letters from the keyword and append the remaining letters of the alphabet (excluding 'J') to complete the 5x5 matrix;
+    - For each pair of letters in the plaintext:
+        - If the letters are the same, insert a filler letter between them;
+        - Locate the letters in the matrix:
+            - If the letters appear in the same row, shift each letter to the right;
+            - If the letters appear in the same column, shift each letter down;
+            - If the letters form a rectangle, replace each letter with the one on the same row but in the opposite corner of the rectangle.
+        - Replace each letter with the one at the new position.
+    - Non-alphabetic characters are usually left unchanged.
 
 Decryption:
-+ For each pair of letters in the ciphertext:
-    + Locate the letters in the matrix:
-        + If the letters appear in the same row, shift each letter to the left;
-        + If the letters appear in the same column, shift each letter up;
-        + If the letters form a rectangle, replace each letter with the one on the same row but in the opposite corner of the rectangle;
-    + Replace each letter with the one at the new position;
+    - For each pair of letters in the ciphertext:
+        - Locate the letters in the matrix:
+            - If the letters appear in the same row, shift each letter to the left;
+            - If the letters appear in the same column, shift each letter up;
+            - If the letters form a rectangle, replace each letter with the one on the same row but in the opposite corner of the rectangle.
+        - Replace each letter with the one at the new position.
 
-Шифр Плейфера — это шифр подстановки для пар букв, который использует таблицу 5x5, созданную на основе ключевого слова. Каждая пара букв открытого текста шифруется в зависимости от их положения в таблице. Если пара состоит из одинаковых букв, между ними вставляется вспомогательная буква (обычно 'X').
+Шифр Плейфера - это шифр подстановки для пар букв, который использует таблицу 5x5, созданную на основе ключевого слова. Каждая пара букв открытого текста шифруется в зависимости от их положения в таблице. Если пара состоит из одинаковых букв, между ними вставляется вспомогательная буква.
 
 Зашифровка:
-+ Выбирается ключевое слово;
-+ Из ключа удаляются повторяющиеся буквы, а оставшиеся буквы алфавита (кроме 'J') добавляются для формирования таблицы 5x5;
-+ Для каждой пары букв открытого текста:
-    + Если буквы одинаковые, между ними вставляется вспомогательная буква (обычно 'X');
-    + Найдите буквы в таблице:
-        + Если буквы находятся в одной строке, сдвигайте каждую букву вправо (с переходом в начало строки, если необходимо);
-        + Если буквы находятся в одном столбце, сдвигайте каждую букву вниз (с переходом в верхнюю строку, если необходимо);
-        + Если буквы образуют прямоугольник, замените каждую букву на ту, что находится на противоположных углах прямоугольника в таблице;
-    + Замените каждую букву на букву, находящуюся на новой позиции;
-+ Прочие символы обычно остаются без изменений.
+    - Выбирается ключевое слово;
+    - Из ключа удаляются повторяющиеся буквы, а оставшиеся буквы алфавита (кроме 'J') добавляются для формирования таблицы 5x5;
+    - Для каждой пары букв открытого текста:
+        - Если буквы одинаковые, между ними вставляется вспомогательная буква;
+        - Найдите буквы в таблице:
+            - Если буквы находятся в одной строке, сдвигайте каждую букву вправо;
+            - Если буквы находятся в одном столбце, сдвигайте каждую букву вниз;
+            - Если буквы образуют прямоугольник, замените каждую букву на ту, что находится на противоположных углах прямоугольника в таблице.
+        - Замените каждую букву на букву, находящуюся на новой позиции.
+    - Прочие символы обычно остаются без изменений.
 
 Расшифровка:
-+ Для каждой пары букв зашифрованного текста:
-    + Найдите буквы в таблице:
-        + Если буквы находятся в одной строке, сдвигайте каждую букву влево;
-        + Если буквы находятся в одном столбце, сдвигайте каждую букву вверх;
-        + Если буквы образуют прямоугольник, замените каждую букву на ту, что находится на противоположных углах прямоугольника в таблице;
-    + Замените каждую букву на букву, находящуюся на новой позиции.
+    - Для каждой пары букв зашифрованного текста:
+        - Найдите буквы в таблице:
+            - Если буквы находятся в одной строке, сдвигайте каждую букву влево;
+            - Если буквы находятся в одном столбце, сдвигайте каждую букву вверх;
+            - Если буквы образуют прямоугольник, замените каждую букву на ту, что находится на противоположных углах прямоугольника в таблице.
+        - Замените каждую букву на букву, находящуюся на новой позиции.
+
+Playfair-salaus on digrafinen korvaussalaus, joka salaa tekstin 5×5-matriisin avulla. Matriisi muodostetaan avainsanasta, ja selvätekstin kirjainparit salataan kirjainten sijainnin perusteella. Jos pari koostuu kahdesta samasta kirjaimesta, niiden väliin lisätään täytekirjain.
+
+Salaus:
+    - Valitaan avainsana;
+    - Poistetaan avainsanasta toistuvat kirjaimet ja lisätään aakkoston jäljellä olevat kirjaimet (poislukien J) 5×5-matriisin täydentämiseksi;
+    - Jokaiselle selvätekstin kirjainparille:
+        - Jos kirjaimet ovat samat, lisätään niiden väliin täytekirjain;
+        - Etsitään kirjainten sijainti matriisissa:
+            - Jos kirjaimet ovat samalla rivillä, kumpaakin siirretään yhden askeleen verran oikealle;
+            - Jos kirjaimet ovat samassa sarakkeessa, kumpaakin siirretään yhden askeleen verran alaspäin;
+            - Jos kirjaimet muodostavat suorakulmion, kumpikin kirjain korvataan samalla rivillä olevalla mutta suorakulmion vastakkaisessa kulmassa sijaitsevalla kirjaimella.
+        - Korvataan kirjaimet niiden uusissa sijainneissa olevilla kirjaimilla.
+    - Muut kuin aakkosmerkit jätetään yleensä muuttumattomiksi.
+
+Purku:
+    - Jokaiselle salatekstin kirjainparille:
+    - Etsitään kirjainten sijainti matriisissa:
+        - Jos kirjaimet ovat samalla rivillä, kumpaakin siirretään yhden askeleen verran vasemmalle;
+        - Jos kirjaimet ovat samassa sarakkeessa, kumpaakin siirretään yhden askeleen verran ylöspäin;
+        - Jos kirjaimet muodostavat suorakulmion, kumpikin kirjain korvataan samalla rivillä olevalla mutta suorakulmion vastakkaisessa kulmassa sijaitsevalla kirjaimella;
+        - Korvataan kirjaimet niiden lasketuissa sijainneissa olevilla kirjaimilla.
 '''
 
 class PlayfairCipher:
@@ -161,7 +183,7 @@ class PlayfairCipher:
                 new_char_1 = self.matrix[row_1][column_2]
                 new_char_2 = self.matrix[row_2][column_1]
                 plaintext.append(new_char_1 + new_char_2)
-        
+
         return ''.join(plaintext).replace('X', '')
 
 if __name__ == "__main__":

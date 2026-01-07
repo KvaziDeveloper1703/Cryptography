@@ -2,42 +2,62 @@
 The Hill Cipher is a block cipher that encrypts text using linear algebra. It relies on a square matrix as the key, and the plaintext is divided into blocks of letters. These blocks are then transformed through matrix multiplication, using the key matrix to encrypt the data.
 
 Encryption:
-+ Choose a square matrix as the key;
-+ The size of the matrix determines the block size (e.g., a 2x2 matrix means using pairs of letters);
-+ For each block of plaintext:
-    + Convert each letter into a numerical value (typically, A=0, B=1, C=2, etc.);
-    + Perform matrix multiplication with the key matrix and the plaintext block vector;
-    + Apply the modulo operation to ensure the result stays within the bounds of the alphabet;
-    + Convert the resulting numbers back to letters;
-+ Non-alphabetic characters are usually left unchanged.
+    - Choose a square matrix as the key;
+    - The size of the matrix determines the block size;
+    - For each block of plaintext:
+        - Convert each letter into a numerical value;
+        - Perform matrix multiplication with the key matrix and the plaintext block vector;
+        - Apply the modulo operation to ensure the result stays within the bounds of the alphabet;
+        - Convert the resulting numbers back to letters.
+    - Non-alphabetic characters are usually left unchanged.
 
 Decryption:
-+ Find the inverse of the key matrix;
-+ For each block of ciphertext:
-    + Convert each letter into a numerical value;
-    + Perform matrix multiplication with the inverse key matrix and the ciphertext block vector;
-    + Apply the modulo operation to keep the result within the alphabet's range;
-    + Convert the resulting numbers back to letters.
+    - Find the inverse of the key matrix;
+    - For each block of ciphertext:
+        - Convert each letter into a numerical value;
+        - Perform matrix multiplication with the inverse key matrix and the ciphertext block vector;
+        - Apply the modulo operation to keep the result within the alphabet's range;
+        - Convert the resulting numbers back to letters.
 
-Шифр Хилла — это блочный шифр, основанный на линейной алгебре. Он использует квадратную матрицу в качестве ключа, а текст разбивается на блоки, которые затем шифруются с помощью умножения матриц.
+Шифр Хилла - это блочный шифр, основанный на линейной алгебре. Он использует квадратную матрицу в качестве ключа, а текст разбивается на блоки, которые затем шифруются с помощью умножения матриц.
 
 Зашифровка:
-+ Выбирается квадратная матрица в качестве ключа;
-+ Размер матрицы определяет размер блока (например, для матрицы 2x2 используется пара букв);
-+ Для каждого блока открытого текста:
-    + Каждая буква преобразуется в числовое значение (обычно A=0, B=1, C=2 и так далее);
-    + Выполняется умножение матрицы ключа на вектор блока открытого текста;
-    + Применяется операция взятия по модулю, чтобы результат оставался в пределах алфавита;
-    + Результирующие числа преобразуются обратно в буквы;
-+ Прочие символы обычно остаются без изменений.
+    - Выбирается квадратная матрица в качестве ключа;
+    - Размер матрицы определяет размер блока;
+    - Для каждого блока открытого текста:
+        - Каждая буква преобразуется в числовое значение;
+        - Выполняется умножение матрицы ключа на вектор блока открытого текста;
+        - Применяется операция взятия по модулю, чтобы результат оставался в пределах алфавита;
+        - Результирующие числа преобразуются обратно в буквы.
+    - Прочие символы обычно остаются без изменений.
 
 Расшифровка:
-+ Находится обратная матрица ключа;
-+ Для каждого блока зашифрованного текста:
-    + Каждая буква преобразуется в числовое значение;
-    + Выполняется умножение обратной матрицы ключа на вектор блока зашифрованного текста;
-    + Применяется операция взятия по модулю, чтобы результат оставался в пределах алфавита;
-    + Результирующие числа преобразуются обратно в буквы.
+    - Находится обратная матрица ключа;
+    - Для каждого блока зашифрованного текста:
+        - Каждая буква преобразуется в числовое значение;
+        - Выполняется умножение обратной матрицы ключа на вектор блока зашифрованного текста;
+        - Применяется операция взятия по модулю, чтобы результат оставался в пределах алфавита;
+        - Результирующие числа преобразуются обратно в буквы.
+
+Hill-salaus on lohkosalaus, joka salaa tekstin lineaarialgebran avulla. Se perustuu neliömatriisiin avaimena, ja selväteksti jaetaan kirjainlohkoihin. Nämä lohkot muunnetaan matriisikertolaskun avulla käyttäen avainmatriisia tiedon salaamiseen.
+
+Salaus:
+    - Valitaan neliömatriisi avaimena;
+    - Matriisin koko määrittää lohkon koon;
+    - Jokaiselle selvätekstin lohkolle:
+        - Muutetaan jokainen kirjain numeeriseksi arvoksi;
+        - Suoritetaan matriisikertolasku avainmatriisin ja selvätekstivektorin välillä;
+        - Sovelletaan modulo-operaatiota, jotta tulos pysyy aakkoston rajoissa;
+        - Muutetaan saadut numerot takaisin kirjaimiksi.
+    - Muut kuin aakkosmerkit jätetään yleensä muuttumattomiksi.
+
+Purku:
+    - Etsitään avainmatriisin käänteismatriisi;
+    - Jokaiselle salatekstin lohkolle:
+        - Muutetaan jokainen kirjain numeeriseksi arvoksi;
+        - Suoritetaan matriisikertolasku käänteisen avainmatriisin ja salatekstivektorin välillä;
+        - Sovelletaan modulo-operaatiota, jotta tulos pysyy aakkoston alueella;
+        - Muutetaan saadut numerot takaisin kirjaimiksi.
 '''
 
 class HillCipher:
@@ -56,10 +76,8 @@ class HillCipher:
             raise ValueError("Matrix is not invertible!")
 
         inverted_matrix = [
-            [matrix[1][1] * inverted_determinant % self.modulus, 
-             (-matrix[0][1]) * inverted_determinant % self.modulus],
-            [(-matrix[1][0]) * inverted_determinant % self.modulus, 
-             matrix[0][0] * inverted_determinant % self.modulus]
+            [matrix[1][1] * inverted_determinant % self.modulus, (-matrix[0][1]) * inverted_determinant % self.modulus],
+            [(-matrix[1][0]) * inverted_determinant % self.modulus, matrix[0][0] * inverted_determinant % self.modulus]
         ]
 
         return inverted_matrix
@@ -129,9 +147,10 @@ class HillCipher:
         return decrypted_text.replace('X', '')
 
 if __name__ == "__main__":
-    
-    key_matrix =    [[5, 8], 
-                    [17, 3]]
+
+    key_matrix = [  [5, 8], 
+                    [17, 3]
+            ]
 
     cipher = HillCipher(key_matrix)
 

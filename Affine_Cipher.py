@@ -103,7 +103,7 @@ class AffineCipher:
 
     def decode_character(self, character: str) -> str:
         if character.isalpha():
-            chararacter = character.upper()
+            character = character.upper()
             position = self.alphabet[character]
             inverted_a = self.multiplicative_inverse(self.a, self.m)
             new_position = (inverted_a * (position - self.b)) % self.m

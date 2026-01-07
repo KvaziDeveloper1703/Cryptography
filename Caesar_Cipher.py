@@ -2,36 +2,53 @@
 The Caesar Cipher is a substitution cipher that encrypts text by shifting each letter in the alphabet by a fixed number of positions. The shift is uniform for all characters in the text.
 
 Encryption:
-+ Choose a key (shift value);
-+ For each letter in the plaintext:
-    + Determine its position in the alphabet;
-    + Add the key to this position;
-    + Wrap around if the shift exceeds the alphabet boundaries;
-    + Replace the letter with the one at the new position;
-+ Non-alphabetic characters are usually left unchanged.
+    - Choose a key;
+    - For each letter in the plaintext:
+        - Determine its position in the alphabet;
+        - Add the key to this position;
+        - Wrap around if the shift exceeds the alphabet boundaries;
+        - Replace the letter with the one at the new position.
+    - Non-alphabetic characters are usually left unchanged.
 
 Decryption:
-+ Determine the position of the encrypted letter in the alphabet;
-+ Subtract the key from this position;
-+ Wrap around if the result is outside the alphabet boundaries;
-+ Replace the encrypted letter with the one at the calculated position.
+    - Determine the position of the encrypted letter in the alphabet;
+    - Subtract the key from this position;
+    - Wrap around if the result is outside the alphabet boundaries;
+    - Replace the encrypted letter with the one at the calculated position.
 
-Шифр Цезаря — это подстановочный шифр, который шифрует текст, сдвигая каждую букву алфавита на фиксированное количество позиций. Сдвиг одинаков для всех символов текста.
+Шифр Цезаря - это подстановочный шифр, который шифрует текст, сдвигая каждую букву алфавита на фиксированное количество позиций. Сдвиг одинаков для всех символов текста.
 
 Зашифровка:
-+ Выбирается ключ (значение сдвига);
-+ Для каждой буквы открытого текста:
-    + Определите её позицию в алфавите;
-    + Прибавьте к этой позиции ключ;
-    + Если сдвиг выходит за границы алфавита, выполните переход к его началу;
-    + Замените букву на ту, что находится на новой позиции;
-+ Остальные символы обычно остаются без изменений.
+    - Выбирается ключ;
+    - Для каждой буквы открытого текста:
+        - Определите её позицию в алфавите;
+        - Прибавьте к этой позиции ключ;
+        - Если сдвиг выходит за границы алфавита, выполните переход к его началу;
+        - Замените букву на ту, что находится на новой позиции.
+    - Остальные символы обычно остаются без изменений.
 
 Расшифровка:
-+ Определите позицию зашифрованной буквы в алфавите;
-+ Вычтите из неё значение ключа;
-+ Если результат выходит за границы алфавита, выполните переход к его концу;
-+ Замените зашифрованную букву на ту, что находится на вычисленной позиции.
+    - Определите позицию зашифрованной буквы в алфавите;
+    - Вычтите из неё значение ключа;
+    - Если результат выходит за границы алфавита, выполните переход к его концу;
+    - Замените зашифрованную букву на ту, что находится на вычисленной позиции.
+
+Caesarin salaus on korvaussalaus, joka salaa tekstin siirtämällä jokaista aakkoston kirjainta kiinteän määrän verran. Siirto on sama kaikille tekstin merkeille.
+
+Salaus:
+    - Valitaan avain;
+    - Jokaiselle selvätekstin kirjaimelle:
+        - Määritetään sen sijainti aakkostossa;
+        - Lisätään tähän sijaintiin avain;
+        - Kierretään aakkoston alkuun, jos siirto ylittää aakkoston rajat;
+        - Korvataan kirjain sillä kirjaimella, joka on uudessa sijainnissa.
+    - Muut kuin aakkosmerkit jätetään yleensä muuttumattomiksi.
+
+Purku:
+    - Määritetään salatun kirjaimen sijainti aakkostossa;
+    - Vähennetään tästä sijainnista avain;
+    - Kierretään tarvittaessa aakkoston loppuun, jos tulos menee aakkoston rajojen ulkopuolelle;
+    - Korvataan salattu kirjain sillä kirjaimella, joka on lasketussa sijainnissa.
 """
 
 class CaesarCipher:

@@ -2,30 +2,30 @@
 The Beaufort cipher is a polyalphabetic substitution cipher that is closely related to the Vigenère cipher, but uses a different encryption formula.
 
 Encryption:
-+ Use a repeating keyword to match the length of the plaintext;
-+ For each letter in the plaintext:
-    + Find the corresponding letter in the keyword;
-    + The Beaufort table (the inverse of the Vigenere table) is used to find the encrypted letter;
-+ Non-letter characters are usually left unchanged;
-+ The result is a cipher that is symmetric — the same process is used for decryption.
+    - Use a repeating keyword to match the length of the plaintext;
+    - For each letter in the plaintext:
+        - Find the corresponding letter in the keyword;
+        - The Beaufort table is used to find the encrypted letter;
+    - Non-letter characters are usually left unchanged;
+    - The result is a cipher that is symmetric - the same process is used for decryption.
 
 Decryption:
-+ Same as encryption;
-+ Apply the Beaufort formula using the keyword and the ciphertext to retrieve the original message.
+    - Same as encryption;
+    - Apply the Beaufort formula using the keyword and the ciphertext to retrieve the original message.
 
-Шифр Бофорта — это полиалфавитный шифр подстановки, тесно связанный с шифром Виженера, но использующий иную формулу шифрования.
+Шифр Бофорта - это полиалфавитный шифр подстановки, тесно связанный с шифром Виженера, но использующий иную формулу шифрования.
 
 Зашифровка:
-+ Используется повторяющееся ключевое слово, длина которого соответствует длине открытого текста;
-+ Для каждой буквы открытого текста:
-    + Определяется соответствующая буква ключа;
-    + По таблице Бофорта (обратной таблице Виженера) находится зашифрованная буква;
-+ Неалфавитные символы, как правило, не изменяются;
-+ Шифр симметричен — тот же процесс используется для расшифровки.
+    - Используется повторяющееся ключевое слово, длина которого соответствует длине открытого текста;
+    - Для каждой буквы открытого текста:
+        - Определяется соответствующая буква ключа;
+        - По таблице Бофорта находится зашифрованная буква;
+    - Неалфавитные символы, как правило, не изменяются;
+    - Шифр симметричен - тот же процесс используется для расшифровки.
 
 Расшифровка:
-+ Процесс идентичен зашифровке;
-+ Используется та же формула с тем же ключом для восстановления исходного сообщения.
+    - Процесс идентичен зашифровке;
+    - Используется та же формула с тем же ключом для восстановления исходного сообщения.
 '''
 
 class BeaufortCipher:

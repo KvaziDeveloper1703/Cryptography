@@ -2,38 +2,56 @@
 The Polybius cipher is a substitution cipher that encrypts each letter as a pair of digits based on its position in a fixed 5×5 grid.
 
 Encryption:
-+ Use a 5×5 grid filled with the letters of the alphabet (I and J are combined to fit 25 letters);
-+ Number the rows and columns from 1 to 5;
-+ For each letter in the plaintext:
-    + Locate the letter in the grid;
-    + Replace it with its row and column numbers;
-+ The result is a series of digit pairs;
-+ Non-letter characters are skipped or processed separately.
+    - Use a 5×5 grid filled with the letters of the alphabet;
+    - Number the rows and columns from 1 to 5;
+    - For each letter in the plaintext:
+        - Locate the letter in the grid;
+        - Replace it with its row and column numbers.
+    - The result is a series of digit pairs;
+    - Non-letter characters are skipped or processed separately.
 
 Decryption:
-+ Split the ciphertext into pairs of digits;
-+ For each pair:
-    + The first digit is the row number, the second is the column number;
-    + Find the letter located at that position in the 5×5 grid;
-+ Combine the letters to recover the original message.
+    - Split the ciphertext into pairs of digits;
+    - For each pair:
+        - The first digit is the row number, the second is the column number;
+        - Find the letter located at that position in the 5×5 grid.
+    - Combine the letters to recover the original message.
 
-Шифр Полибия — это подстановочный шифр, в котором каждая буква заменяется парой цифр, указывающих её координаты в постоянной таблице 5×5.
+Шифр Полибия - это подстановочный шифр, в котором каждая буква заменяется парой цифр, указывающих её координаты в постоянной таблице 5×5.
 
 Зашифровка:
-+ Используется таблица 5×5, заполненная буквами алфавита (буквы I и J объединяются в одну ячейку, чтобы получилось 25 букв);
-+ Строки и столбцы нумеруются от 1 до 5;
-+ Для каждой буквы открытого текста:
-    + Определяется её место в таблице;
-    + Буква заменяется на пару цифр: номер строки и номер столбца;
-+ В результате получается последовательность пар чисел;
-+ Неалфавитные символы пропускаются или обрабатываются отдельно.
+    - Используется таблица 5×5, заполненная буквами алфавита;
+    - Строки и столбцы нумеруются от 1 до 5;
+    - Для каждой буквы открытого текста:
+        - Определяется её место в таблице;
+        - Буква заменяется на пару цифр: номер строки и номер столбца.
+    - В результате получается последовательность пар чисел;
+    - Неалфавитные символы пропускаются или обрабатываются отдельно.
 
 Расшифровка:
-+ Шифртекст делится на пары цифр;
-+ Для каждой пары:
-    + Первая цифра — номер строки, вторая — номер столбца;
-    + Определяется буква, находящаяся в данной позиции таблицы 5×5;
-+ Из этих букв собирается исходное сообщение.
+    - Шифртекст делится на пары цифр;
+    - Для каждой пары:
+        - Первая цифра - номер строки, вторая - номер столбца;
+        - Определяется буква, находящаяся в данной позиции таблицы 5×5.
+    - Из этих букв собирается исходное сообщение.
+
+Polybiuksen neliö on korvaussalaus, jossa jokainen kirjain salataan numeroparina sen sijainnin perusteella kiinteässä 5×5-ruudukossa.
+
+Salaus:
+    - Käytetään 5×5-ruudukkoa, joka on täytetty aakkoston kirjaimilla;
+    - Numeroidaan rivit ja sarakkeet luvuilla 1–5;
+    - Jokaiselle selvätekstin kirjaimelle:
+        - Etsitään kirjaimen sijainti ruudukossa;
+        - Korvataan kirjain sen rivi- ja sarakenumeroilla.
+    - Tuloksena on numerosarjoista koostuva parijono;
+    - Muut kuin kirjaimet ohitetaan tai käsitellään erikseen.
+
+Purku:
+    - Jaetaan salateksti numeropareihin;
+    - Jokaiselle parille:
+        - Ensimmäinen numero on rivinumero ja toinen sarakenumero;
+        - Etsitään kirjain, joka sijaitsee kyseisessä kohdassa 5×5-ruudukossa.
+    - Yhdistetään kirjaimet alkuperäisen viestin palauttamiseksi.
 '''
 
 class PolybiusCipher:
